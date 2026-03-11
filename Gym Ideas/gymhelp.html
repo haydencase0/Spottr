@@ -6,9 +6,10 @@
     <link rel="stylesheet" href="gymhelp.css">
     <title>Gym Ideas</title>
 </head>
+
 <body>
     <div class="logo">
-        Spottr
+        <img src="/images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
     </div>
 
     <div class="level-buttons">
@@ -17,16 +18,20 @@
         <button>Beginner</button>
     </div>
 
-    <div class="dropdown-section">
-        <p><strong>Different Exercises</strong></p>
-        <select>
-            <option>Select Exercise</option>
-            <option>Push Ups</option>
-            <option>Squats</option>
-            <option>Pull Ups</option>
-            <option>Plank</option>
-        </select>
-    </div>
+
+    <select id="exercise-select">
+    <option value="">Select Exercise</option>
+    <option value="pushups">Push Ups</option>
+    <option value="squats">Squats</option>
+    <option value="pullups">Pull Ups</option>
+    <option value="plank">Plank</option>
+    </select>
+
+    <div id="video-display" class="video-area">
+    <p>Select an exercise to see the form video!</p>
+
+
+</div>
 
     <div class="video-area">
         <p>Exercise videos based from dropdown menus</p>
@@ -36,4 +41,5 @@
         <a href="#">Message Board</a>
     </div>
 </body>
+<script src="gymhelp.js"></script>
 </html>
