@@ -33,7 +33,10 @@ select{
 }
 
 .video-area{
-    margin-bottom:100px;
+    margin-left: auto;
+    margin-right:auto;
+    height:300px;
+    width:500px;
 }
 
 .message-board a{
