@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:40px;
+    text-align:center;
+}
+
+.logo{
+    font-size:60px;
+    font-weight:bold;
+    margin-bottom:40px;
+}
+
+
+.level-buttons{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:60px;
+}
+.level-buttons button{
+    padding:12px 25px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.dropdown-section{
+    margin-bottom:80px;
+}
+select{
+    padding:10px;
+    font-size:16px;
+}
+
+.video-area{
+    margin-bottom:100px;
+}
+
+.message-board a{
+    font-size:18px;
+    text-decoration:none;
+    color:blue;
+}
