@@ -1,0 +1,21 @@
+body {
+    text-align: center;
+    background-image: url("/images/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.message {
+    background: #f1f1f1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
