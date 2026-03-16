@@ -3,10 +3,10 @@ const displayArea = document.getElementById('video-display');
 
  
 const videoMap = {
-    pushups: "https://www.youtube.com/embed/",
-    squats: "https://www.youtube.com/embed/",
-    pullups: "https://www.youtube.com/embed/",
-    plank: "https://www.youtube.com/embed/"
+    pushups: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    squats: "https://www.youtube.com/embed/uegj4NbKD_s",
+    pullups: "https://www.youtube.com/embed/EhGEgrfrANY",
+    plank: "https://www.youtube.com/embed/4luM9Q_Sjhg"
     };
 
 
@@ -18,6 +18,7 @@ const videoMap = {
             displayArea.innerHTML = `
                 <iframe width="100%" height="100%" 
                     src="${videoMap[selectedValue]}" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     frameborder="0" allowfullscreen>
                 </iframe>`;
         } else {

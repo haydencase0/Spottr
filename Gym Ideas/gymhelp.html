@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gymhelp.css">
+    <script src="gymhelp.js" defer></script>
     <title>Gym Ideas</title>
 </head>
 
@@ -12,34 +13,28 @@
         <img src="/images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
     </div>
 
-    <div class="level-buttons">
-        <button>Advanced</button>
-        <button>Intermediate</button>
-        <button>Beginner</button>
-    </div>
+    <select id="difficulty-select">
+        <option value="">Select Difficulty</option>
+        <option value="pushups">Advanced</option>
+        <option value="squats">Intermediate</option>
+        <option value="pullups">Beginner</option>
+    </select>
 
 
     <select id="exercise-select">
-    <option value="">Select Exercise</option>
-    <option value="pushups">Push Ups</option>
-    <option value="squats">Squats</option>
-    <option value="pullups">Pull Ups</option>
-    <option value="plank">Plank</option>
+        <option value="">Select Exercise</option>
+        <option value="pushups">Push Ups</option>
+        <option value="squats">Squats</option>
+        <option value="pullups">Pull Ups</option>
+        <option value="plank">Plank</option>
     </select>
 
     <div id="video-display" class="video-area">
-    <p>Select an exercise to see the form video!</p>
-
-
-</div>
-
-    <div class="video-area">
-        <p>Exercise videos based from dropdown menus</p>
+        <p>Select an exercise to see the form video!</p>
     </div>
 
     <div class="message-board">
         <a href="#">Message Board</a>
     </div>
 </body>
-<script src="gymhelp.js"></script>
 </html>
