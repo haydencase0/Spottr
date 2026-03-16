@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gymhelp.css">
     <title>Gym Ideas</title>
+    <link rel="icon" href="../images/logo.png" type="image/png" />
 </head>
 
 <body>
     <div class="logo">
-        <img src="/images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
+        <img src="../images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
     </div>
 
     <div class="level-buttons">
@@ -18,28 +20,32 @@
         <button>Beginner</button>
     </div>
 
-
-    <select id="exercise-select">
-    <option value="">Select Exercise</option>
-    <option value="pushups">Push Ups</option>
-    <option value="squats">Squats</option>
-    <option value="pullups">Pull Ups</option>
-    <option value="plank">Plank</option>
-    </select>
+    <div class="exercise-dropdown">
+        <select id="exercise-select">
+            <option value="">Select Exercise</option>
+            <option value="pushups">Push Ups</option>
+            <option value="squats">Squats</option>
+            <option value="pullups">Pull Ups</option>
+            <option value="plank">Plank</option>
+        </select>
+    </div>
 
     <div id="video-display" class="video-area">
-    <p>Select an exercise to see the form video!</p>
-
-
-</div>
+        <p>Select an exercise to see the form video!</p>
+    </div>
 
     <div class="video-area">
         <p>Exercise videos based from dropdown menus</p>
     </div>
 
-    <div class="message-board">
+    <div class="message-board" onclick="window.location.href='../message board/message-board.html'">
         <a href="#">Message Board</a>
     </div>
 </body>
 <script src="gymhelp.js"></script>
+
+<footer>
+    ©2026 Team Assiduous. All rights reserved.
+</footer>
+
 </html>
