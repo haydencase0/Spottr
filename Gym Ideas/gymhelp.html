@@ -52,7 +52,7 @@
         <option value="bodyweight">Bodyweight</option>
     </select>
 
-    <button id="generate-button" onclick="buildWorkout()">Generate</button>
+    <button id="generate-button" type="submit">Generate</button>
 
     <div id="results"></div>
 
@@ -60,39 +60,4 @@
         <p>Select an exercise to see the form video!</p>
     </div>
 </body>
-
-<script>
-
-function buildWorkout(){
-    const type=document.getElementById("type").value;
-    const level=document.getElementById("level").value;
-    const time=document.getElementById("time").value;
-    const equipment=document.getElementById("equipment").value;
-
-    const data=generateWorkout(type,level,time,equipment);
-
-    let html="<h2>Warmup</h2><ul>";
-    data.warmup.forEach(w=>html+=`<li>${w}</li>`);
-    html+="</ul>";
-
-    html+="<h2>Workout</h2><ul>";
-    data.workout.forEach(e=>{
-        if(e.duration){
-            html+=`<li><b>${e.name}</b> — ${e.duration}<br>${e.description}</li>`;
-        }else{
-            html+=`<li><b>${e.name}</b> — ${e.sets} sets x ${e.reps}<br>${e.description}</li>`;
-        }
-
-    });
-    html+="</ul>";
-
-    html+="<h2>Cooldown</h2><ul>";
-    data.cooldown.forEach(c=>html+=`<li>${c}</li>`);
-    html+="</ul>";
-
-    html+=`<h3>Rest: ${data.rest}</h3>`;
-
-    document.getElementById("results").innerHTML=html;
-}
-</script>
 </html>
