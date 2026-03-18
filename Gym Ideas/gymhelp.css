@@ -3,7 +3,10 @@ body{
     margin:0;
     padding:40px;
     text-align:center;
-    background-image: url("/images/background.png");
+    background-image: url("../images/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
 }
 
 nav {
