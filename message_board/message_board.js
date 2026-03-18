@@ -14,5 +14,7 @@ form.addEventListener("submit", (e) => {
 
     messages.appendChild(message);
 
+    messages.scrollTop = messages.scrollHeight;
+
     input.value = "";
 });
