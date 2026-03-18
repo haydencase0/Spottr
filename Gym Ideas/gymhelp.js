@@ -10,18 +10,18 @@ const videoMap = {
     };
 
 
-    selectElement.addEventListener('change', (event) => {
-        const selectedValue = event.target.value;
-        
-        if (selectedValue && videoMap[selectedValue]) {
-            // Replace the text with an actual video iframe
-            displayArea.innerHTML = `
-                <iframe width="100%" height="100%" 
-                    src="${videoMap[selectedValue]}" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    frameborder="0" allowfullscreen>
-                </iframe>`;
-        } else {
-            displayArea.innerHTML = "<p>Select an exercise to see the form video!</p>";
+selectElement.addEventListener('change', (event) => {
+    const selectedValue = event.target.value;
+    
+    if (selectedValue && videoMap[selectedValue]) {
+        // Replace the text with an actual video iframe
+        displayArea.innerHTML = `
+            <iframe width="100%" height="100%" 
+                src="${videoMap[selectedValue]}" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                frameborder="0" allowfullscreen>
+            </iframe>`;
+    } else {
+        displayArea.innerHTML = "<p>Select an exercise to see the form video!</p>";
     }
 });
