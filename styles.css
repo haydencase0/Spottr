@@ -45,7 +45,7 @@ html, body {
 }
 
 body {
-    background-image: url("/images/background.png");
+    background-image: url("images/background.png");
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
@@ -155,4 +155,8 @@ img {
     img {
         border: 6px solid black;
     }
+}
+
+#everything{
+    background-image: url(images/background.png);
 }
