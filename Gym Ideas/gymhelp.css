@@ -53,16 +53,28 @@ select{
     font-size:16px;
 }
 
+#results{
+    color: white;
+}
+#results h2{
+    color: rgb(63, 199, 245);
+}
+#results h3{
+    color: rgb(255, 1, 1);
+}
+#results ul,
+#results li{
+    text-align: left;
+    list-style-type: none;
+    padding-left: 15rem;
+    padding-right: 15rem;
+}
+
 .video-area{
+    margin-top: 3rem;
     margin-left: auto;
-    margin-right:auto;
+    margin-right: auto;
     height:300px;
     width:500px;
     color: white;
-}
-
-.message-board a{
-    font-size:18px;
-    text-decoration:none;
-    color:blue;
 }

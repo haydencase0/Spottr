@@ -1,13 +1,15 @@
-const selectElement = document.getElementById('exercise-select');
+const selectElement = document.getElementById('type');
 const displayArea = document.getElementById('video-display');
 
  
 const videoMap = {
-    pushups: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    squats: "https://www.youtube.com/embed/uegj4NbKD_s",
-    pullups: "https://www.youtube.com/embed/EhGEgrfrANY",
-    plank: "https://www.youtube.com/embed/4luM9Q_Sjhg"
-    };
+    strength: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    hypertrophy: "https://www.youtube.com/embed/uegj4NbKD_s",
+    powerlifting: "https://www.youtube.com/embed/EhGEgrfrANY",
+    functional: "https://www.youtube.com/embed/4luM9Q_Sjhg",
+    cardio: "https://www.youtube.com/embed/EhGEgrfrANY",
+    mobility: "https://www.youtube.com/embed/4luM9Q_Sjhg"
+};
 
 
 selectElement.addEventListener('change', (event) => {
