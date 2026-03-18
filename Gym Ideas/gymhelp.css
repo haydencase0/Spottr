@@ -6,12 +6,41 @@ body{
     background-image: url("/images/background.png");
 }
 
+nav {
+    background-color: rgba(95, 94, 94, 0.85);
+    margin: 20px auto;
+    width: 90%;
+    font-family: "Titillium Web", sans-serif;
+    border-radius: 12px;
+    padding: 10px;
+}
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+button {
+    height: 60px;
+    width: 160px;
+    background-color: #5f5e5e;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: black;
+    color: white;
+}
+
 .logo{
     font-size:60px;
     font-weight:bold;
     margin-bottom:40px;
+    height: 100px;
 }
-
 
 .dropdown-section{
     margin-bottom:80px;

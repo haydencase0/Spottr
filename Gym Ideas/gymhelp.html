@@ -7,19 +7,24 @@
     <script src="gymhelp.js" defer></script>
     <title>Gym Ideas</title>
 </head>
-
-<body>
-    <div class="logo">
-        <img src="/images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
+<div class="logo">
+    <img src="/images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
+</div>
+<nav>
+    <div class="nav-buttons">
+        <button class="home" onclick="window.location.href='../index.html'">Home</button>
+        <button class="wwr" onclick="window.location.href='../message_board/message_board.html'">Find a Spottr</button>
+        <button class="ice" onclick="window.location.href='../Gym Ideas/gymhelp.html'">Workouts</button>
+        <button class="project" onclick="window.location.href='https://www.youtube.com/watch?v=xMHJGd3wwZk&list=RDxMHJGd3wwZk&start_radio=1'">Project</button>
     </div>
-
+</nav>
+<body>
     <select id="difficulty-select">
         <option value="">Select Difficulty</option>
         <option value="pushups">Advanced</option>
         <option value="squats">Intermediate</option>
         <option value="pullups">Beginner</option>
     </select>
-
 
     <select id="exercise-select">
         <option value="">Select Exercise</option>
@@ -31,10 +36,6 @@
 
     <div id="video-display" class="video-area">
         <p>Select an exercise to see the form video!</p>
-    </div>
-
-    <div class="message-board">
-        <a href="#">Message Board</a>
     </div>
 </body>
 </html>
