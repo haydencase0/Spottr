@@ -49,6 +49,8 @@ form.addEventListener("submit", async (e) => {
         body: JSON.stringify({ text })
     });
 
+    messages.scrollTop = messages.scrollHeight;
+
     input.value = "";
     loadMessages(); // refresh messages
 });
