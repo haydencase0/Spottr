@@ -1,5 +1,6 @@
 // 1. DOM ELEMENTS
 const form = document.getElementById("message-form");
+const nameInput = document.getElementById("name-input");
 const input = document.getElementById("message-input");
 const messagesDiv = document.getElementById("messages");
 
@@ -54,6 +55,7 @@ function renderMessages(data) {
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const name = nameInput.value.trim();
     const text = input.value.trim();
     if (!text) return;
 
@@ -112,3 +114,25 @@ messagesDiv.addEventListener("click", async (e) => {
 
 // 6. INITIAL LOAD
 loadMessages();
+    if (name === "" || text === "") return;
+
+    const message = document.createElement("div");
+    message.classList.add("message");
+
+    const messageText = document.createElement("div");
+    messageText.textContent = text;
+
+    const messageName = document.createElement("div");
+    messageName.classList.add("message-name");
+    messageName.textContent `- ${name}`;
+
+    message.appendChild(messageText);
+    message.appendChild(messageName);
+
+    messages.appendChild(message);
+
+    messages.scrollTop = messages.scrollHeight;
+
+    nameInput.value = "";
+    messageIn
+});
