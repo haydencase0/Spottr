@@ -18,7 +18,7 @@ form.addEventListener("submit", (e) => {
 
     const messageName = document.createElement("div");
     messageName.classList.add("message-name");
-    messageName.textContent `- ${name}`;
+    messageName.textContent = `- ${name}`;
 
     message.appendChild(messageText);
     message.appendChild(messageName);
@@ -28,5 +28,5 @@ form.addEventListener("submit", (e) => {
     messages.scrollTop = messages.scrollHeight;
 
     nameInput.value = "";
-    messageIn
+    input.value = "";
 });
