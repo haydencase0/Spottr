@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="gymhelp.css">
     <script src="gymhelp.js" defer></script>
+    <script src="workout.js" defer></script>
     <title>Gym Ideas</title>
 </head>
 <div class="logo">
@@ -19,20 +20,41 @@
     </div>
 </nav>
 <body>
-    <select id="difficulty-select">
-        <option value="">Select Difficulty</option>
-        <option value="pushups">Advanced</option>
-        <option value="squats">Intermediate</option>
-        <option value="pullups">Beginner</option>
+    <select id="type">
+        <option value="">Select Workout</option>
+        <option value="strength">Strength</option>
+        <option value="hypertrophy">Hypertrophy</option>
+        <option value="powerlifting">Powerlifting</option>
+        <option value="functional">Functional</option>
+        <option value="cardio">Cardio</option>
+        <option value="mobility">Mobility</option>
     </select>
 
-    <select id="exercise-select">
-        <option value="">Select Exercise</option>
-        <option value="pushups">Push Ups</option>
-        <option value="squats">Squats</option>
-        <option value="pullups">Pull Ups</option>
-        <option value="plank">Plank</option>
+    <select id="level">
+        <option value="">Select Difficulty</option>
+        <option value="beginner">Beginner</option>
+        <option value="intermediate">Intermediate</option>
+        <option value="expert">Expert</option>
     </select>
+
+    <select id="time">
+        <option value="">How Long?</option>
+        <option value="15">15 minutes</option>
+        <option value="30">30 minutes</option>
+        <option value="45">45 minutes</option>
+        <option value="60">60 minutes</option>
+    </select>
+
+    <select id="equipment">
+        <option value="">Available Equipment</option>
+        <option value="full">Full Gym</option>
+        <option value="dumbbell">Dumbbells</option>
+        <option value="bodyweight">Bodyweight</option>
+    </select>
+
+    <button id="generate-button" type="submit">Generate</button>
+
+    <div id="results"></div>
 
     <div id="video-display" class="video-area">
         <p>Select an exercise to see the form video!</p>

@@ -1,0 +1,25 @@
+{
+  "name": "spottr",
+  "version": "1.0.0",
+  "description": "This is a website/app that helps people know what to do at the gym and find a gym partner to go with.",
+  "main": "workout.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/haydencase0/Spottr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/haydencase0/Spottr/issues"
+  },
+  "homepage": "https://github.com/haydencase0/Spottr#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1"
+  }
+}
