@@ -1,5 +1,6 @@
 // 1. DOM ELEMENTS
 const form = document.getElementById("message-form");
+const nameInput = document.getElementById("name-input");
 const input = document.getElementById("message-input");
 const messagesDiv = document.getElementById("messages");
 
@@ -54,61 +55,17 @@ function renderMessages(data) {
 form.addEventListener("submit", async (e) => {
     e.preventDefault();
 
+    const name = nameInput.value.trim();
     const text = input.value.trim();
-    if (!text) return;
+    if (text === "") return;
 
-    await fetch("http://localhost:3000/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text })
-    });
+    const message = document.createElement("div");
+    message.classList.add("message");
+    message.textContent = text;
+
+    messages.appendChild(message);
+
+    messages.scrollTop = messages.scrollHeight;
 
     input.value = "";
-    loadMessages();
 });
-
-
-// 5. DELETE / EDIT / REPLY HANDLERS
-messagesDiv.addEventListener("click", async (e) => {
-    const id = e.target.dataset.id;
-
-    // DELETE
-    if (e.target.classList.contains("delete-btn")) {
-        await fetch(`http://localhost:3000/messages/${id}`, {
-            method: "DELETE"
-        });
-        loadMessages();
-    }
-
-    // EDIT
-    if (e.target.classList.contains("edit-btn")) {
-        const newText = prompt("Edit your message:");
-        if (!newText) return;
-
-        await fetch(`http://localhost:3000/messages/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: newText })
-        });
-
-        loadMessages();
-    }
-
-    // REPLY
-    if (e.target.classList.contains("reply-btn")) {
-        const replyText = prompt("Reply:");
-        if (!replyText) return;
-
-        await fetch(`http://localhost:3000/messages/${id}/reply`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: replyText })
-        });
-
-        loadMessages();
-    }
-});
-
-
-// 6. INITIAL LOAD
-loadMessages();
