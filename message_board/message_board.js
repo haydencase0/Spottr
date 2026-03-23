@@ -77,5 +77,5 @@ form.addEventListener("submit", async (e) => {
     messages.scrollTop = messages.scrollHeight;
 
     nameInput.value = "";
-    messageIn
+    input.value = "";
 });
