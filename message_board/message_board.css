@@ -23,3 +23,44 @@ body {
     border-radius: 8px;
     font-size: 1rem;
 }
+
+nav {
+    background-color: rgba(95, 94, 94, 0.85);
+    margin: 20px auto;
+    width: 90%;
+    font-family: "Titillium Web", sans-serif;
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.nav-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+nav div button {
+    height: 60px;
+    width: 160px;
+    background-color: #5f5e5e;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav div button:hover {
+    background-color: black;
+    color: white;
+}
+
+.logo {
+    height: 100px;
+    display: block;
+    margin: 20px auto 10px auto;
+    position: static;
+    float: none;
+    cursor: pointer;
+}
