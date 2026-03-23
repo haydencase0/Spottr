@@ -61,11 +61,21 @@ form.addEventListener("submit", async (e) => {
 
     const message = document.createElement("div");
     message.classList.add("message");
-    message.textContent = text;
 
-    messages.appendChild(message);
+    const messageText = document.createElement("div");
+    messageText.textContent = text;
 
-    messages.scrollTop = messages.scrollHeight;
+    const messageName = document.createElement("div");
+    messageName.classList.add("message-name");
+    messageName.textContent = `- ${name}`;
 
+    message.appendChild(messageText);
+    message.appendChild(messageName);
+
+    messagesDiv.appendChild(message);
+
+    messagesDiv.scrollTop = messages.scrollHeight;
+
+    nameInput.value = "";
     input.value = "";
 });
