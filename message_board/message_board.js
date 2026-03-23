@@ -67,14 +67,14 @@ form.addEventListener("submit", async (e) => {
 
     const messageName = document.createElement("div");
     messageName.classList.add("message-name");
-    messageName.textContent `- ${name}`;
+    messageName.textContent = `- ${name}`;
 
     message.appendChild(messageText);
     message.appendChild(messageName);
 
-    messages.appendChild(message);
+    messagesDiv.appendChild(message);
 
-    messages.scrollTop = messages.scrollHeight;
+    messagesDiv.scrollTop = messages.scrollHeight;
 
     nameInput.value = "";
     input.value = "";
