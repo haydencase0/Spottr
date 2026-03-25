@@ -57,82 +57,48 @@ form.addEventListener("submit", async (e) => {
 
     const name = nameInput.value.trim();
     const text = input.value.trim();
-    if (!text) return;
-
-    await fetch("http://localhost:3000/messages", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ text })
-    });
-
-    input.value = "";
-    loadMessages();
-});
-
-
-// 5. DELETE / EDIT / REPLY HANDLERS
-messagesDiv.addEventListener("click", async (e) => {
-    const id = e.target.dataset.id;
-
-    // DELETE
-    if (e.target.classList.contains("delete-btn")) {
-        await fetch(`http://localhost:3000/messages/${id}`, {
-            method: "DELETE"
-        });
-        loadMessages();
-    }
-
-    // EDIT
-    if (e.target.classList.contains("edit-btn")) {
-        const newText = prompt("Edit your message:");
-        if (!newText) return;
-
-        await fetch(`http://localhost:3000/messages/${id}`, {
-            method: "PUT",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: newText })
-        });
-
-        loadMessages();
-    }
-
-    // REPLY
-    if (e.target.classList.contains("reply-btn")) {
-        const replyText = prompt("Reply:");
-        if (!replyText) return;
-
-        await fetch(`http://localhost:3000/messages/${id}/reply`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text: replyText })
-        });
-
-        loadMessages();
-    }
-});
-
-
-// 6. INITIAL LOAD
-loadMessages();
     if (name === "" || text === "") return;
 
-    const message = document.createElement("div");
-    message.classList.add("message");
+    const newMessage = {
+        name: name,
+        text: text,
+        timestamp: new Date().toISOString()
+    };
 
-    const messageText = document.createElement("div");
-    messageText.textContent = text;
+    // Get existing messages
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
 
-    const messageName = document.createElement("div");
-    messageName.classList.add("message-name");
-    messageName.textContent `- ${name}`;
+    // Add new one
+    stored.push(newMessage);
 
-    message.appendChild(messageText);
-    message.appendChild(messageName);
+    // Save back to localStorage
+    localStorage.setItem("messages", JSON.stringify(stored));
 
-    messages.appendChild(message);
-
-    messages.scrollTop = messages.scrollHeight;
+    // Re-render
+    renderLocalMessages();
 
     nameInput.value = "";
-    messageIn
+    input.value = "";
 });
+
+function renderLocalMessages() {
+    messagesDiv.innerHTML = "";
+
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+    stored.forEach(msg => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("message");
+
+        wrapper.innerHTML = `
+            <p>${msg.text}</p>
+            <div class="message-name">— ${msg.name}</div>
+            <small>${new Date(msg.timestamp).toLocaleString()}</small>
+        `;
+
+        messagesDiv.appendChild(wrapper);
+    });
+}
+
+// run on page load
+renderLocalMessages();
