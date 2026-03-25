@@ -36,12 +36,19 @@ function renderMessages(data) {
 
         // Render replies
         const repliesDiv = wrapper.querySelector(".replies");
-        msg.replies.forEach(r => {
+
+        (msg.replies || []).forEach((reply, replyIndex) => {
             const replyEl = document.createElement("div");
             replyEl.classList.add("reply");
+
             replyEl.innerHTML = `
-                <p>${r.text}</p>
-                <small>${new Date(r.timestamp).toLocaleString()}</small>
+                <p>${reply.text}</p>
+                <div class="message-name">— ${reply.name}</div>
+                <button class="delete-reply-btn" 
+                        data-message-index="${index}" 
+                        data-reply-index="${replyIndex}">
+                    Delete
+                </button>
             `;
             repliesDiv.appendChild(replyEl);
         });
@@ -103,13 +110,19 @@ function renderLocalMessages() {
         `;
         const repliesDiv = wrapper.querySelector(".replies");
 
-        msg.replies.forEach(reply => {
+        (msg.replies || []).forEach((reply, replyIndex) => {
             const replyEl = document.createElement("div");
             replyEl.classList.add("reply");
 
             replyEl.innerHTML = `
                 <p>${reply.text}</p>
                 <div class="message-name">— ${reply.name}</div>
+
+                <button class="delete-reply-btn"
+                        data-message-index="${index}"
+                        data-reply-index="${replyIndex}">
+                    Delete
+                </button>
             `;
 
             repliesDiv.appendChild(replyEl);
@@ -147,6 +160,19 @@ messagesDiv.addEventListener("click", (e) => {
         };
 
         stored[index].replies.push(reply);
+
+        localStorage.setItem("messages", JSON.stringify(stored));
+        renderLocalMessages();
+    }
+
+    // DELETE REPLY
+    if (e.target.classList.contains("delete-reply-btn")) {
+        const messageIndex = e.target.getAttribute("data-message-index");
+        const replyIndex = e.target.getAttribute("data-reply-index");
+
+        const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+        stored[messageIndex].replies.splice(replyIndex, 1);
 
         localStorage.setItem("messages", JSON.stringify(stored));
         renderLocalMessages();
