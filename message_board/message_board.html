@@ -8,24 +8,36 @@
     <script src="message_board.js" defer></script>
 </head>
 <body>
+    <div class="logo">
+        <img src="../images/logo.png" alt="Spottr Logo" class="logo" onclick="window.location.href='/index.html'">
+    </div>
     <nav>
-        <h1>Spottr</h1>
-        <h2>Message Board</h2>
+        <div class="nav-buttons">
+            <button class="home" onclick="window.location.href='../index.html'">Home</button>
+            <button class="wwr" onclick="window.location.href='../message_board/message_board.html'">Find a Spottr</button>
+            <button class="ice" onclick="window.location.href='../Gym Ideas/gymhelp.html'">Workouts</button>
+            <button class="project" onclick="window.location.href='https://www.youtube.com/watch?v=xMHJGd3wwZk'">Project</button>
+        </div>
     </nav>
     <main>
+        <h1>Find a Spottr</h1>
         <div class="message-board-container">
             <div class="message-board">
+                <!-- Make posts -->
+                <h2>Make a Post</h2>
                 <form id="message-form">
+                    <input type="text" id="name-input" placeholder="Type your name here..." required>
                     <input type="text" id="message-input" placeholder="Type your message here..." required>
-                    <button type="submit">Post</button>
+                    <button type="submit" id="post-button">Post</button>
                 </form>
                 
+                <!-- Where other posts will be -->
                 <div id="messages"></div>
             </div>
         </div>
     </main>
     <footer>
-
+        ©2026 Team Assiduous. All rights reserved.
     </footer>
 </body>
 </html>
