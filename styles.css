@@ -157,3 +157,7 @@ img {
         border: 6px solid black;
     }
 }
+
+#everything{
+    background-image: url(images/background.png);
+}
