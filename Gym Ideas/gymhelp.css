@@ -11,7 +11,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 12px;
+    gap: 15px;
 }
 
 .button{
@@ -23,6 +23,12 @@
     color: white;
     border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #de080f;
+    transform: scale(1.05);
 }
 
 nav {
@@ -43,6 +49,7 @@ body{
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    color: white;
 }
 
 main {
@@ -73,6 +80,8 @@ button:hover{
 
 select{
     background-color: #de080f;
+    padding: 12px;
+    font-size: 16px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -92,9 +101,17 @@ option{
     margin-bottom:60px;
 }
 .level-buttons button{
-    padding:12px 25px;
-    font-size:16px;
-    cursor:pointer;
+    padding: 12px 30px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #de080f;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.level-buttons button:hover {
+    background: #de080f;
 }
 
 .dropdown-section{
@@ -111,12 +128,29 @@ select{
     height:300px;
     width:500px;
     color: white    ;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
+}
+
+.message-board {
+    margin-top: 40px;
 }
 
 .message-board a{
-    font-size:18px;
-    text-decoration:none;
-    color:blue;
+    color: #de080f;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.message-board a:hover {
+    text-decoration: underline;
 }
 
 footer {
