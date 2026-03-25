@@ -86,7 +86,7 @@ function renderLocalMessages() {
 
     const stored = JSON.parse(localStorage.getItem("messages")) || [];
 
-    stored.forEach(msg => {
+    stored.forEach((msg, index) => {
         const wrapper = document.createElement("div");
         wrapper.classList.add("message");
 
@@ -94,11 +94,29 @@ function renderLocalMessages() {
             <p>${msg.text}</p>
             <div class="message-name">— ${msg.name}</div>
             <small>${new Date(msg.timestamp).toLocaleString()}</small>
+            <button class="delete-btn" data-index="${index}">Delete</button>
         `;
 
         messagesDiv.appendChild(wrapper);
     });
 }
+
+messagesDiv.addEventListener("click", (e) => {
+    if (e.target.classList.contains("delete-btn")) {
+        const index = e.target.getAttribute("data-index");
+
+        const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+        // remove the message
+        stored.splice(index, 1);
+
+        // save updated list
+        localStorage.setItem("messages", JSON.stringify(stored));
+
+        // re-render UI
+        renderLocalMessages();
+    }
+});
 
 // run on page load
 renderLocalMessages();
