@@ -57,25 +57,48 @@ form.addEventListener("submit", async (e) => {
 
     const name = nameInput.value.trim();
     const text = input.value.trim();
-    if (text === "") return;
+    if (name === "" || text === "") return;
 
-    const message = document.createElement("div");
-    message.classList.add("message");
+    const newMessage = {
+        name: name,
+        text: text,
+        timestamp: new Date().toISOString()
+    };
 
-    const messageText = document.createElement("div");
-    messageText.textContent = text;
+    // Get existing messages
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
 
-    const messageName = document.createElement("div");
-    messageName.classList.add("message-name");
-    messageName.textContent = `- ${name}`;
+    // Add new one
+    stored.push(newMessage);
 
-    message.appendChild(messageText);
-    message.appendChild(messageName);
+    // Save back to localStorage
+    localStorage.setItem("messages", JSON.stringify(stored));
 
-    messagesDiv.appendChild(message);
-
-    messagesDiv.scrollTop = messages.scrollHeight;
+    // Re-render
+    renderLocalMessages();
 
     nameInput.value = "";
     input.value = "";
 });
+
+function renderLocalMessages() {
+    messagesDiv.innerHTML = "";
+
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+    stored.forEach(msg => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("message");
+
+        wrapper.innerHTML = `
+            <p>${msg.text}</p>
+            <div class="message-name">— ${msg.name}</div>
+            <small>${new Date(msg.timestamp).toLocaleString()}</small>
+        `;
+
+        messagesDiv.appendChild(wrapper);
+    });
+}
+
+// run on page load
+renderLocalMessages();

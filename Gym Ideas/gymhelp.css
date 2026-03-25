@@ -1,12 +1,34 @@
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 20px;
-    text-align: center;
-    background-image: url("../images/background.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
+.logo-header {
+    height: 100px;
+    display: block;
+    margin: 20px auto 10px auto;
+    position: static;
+    float: none;
+    cursor: pointer;
+}
+
+.nav-buttons-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.button{
+    height: 60px;
+    width: 160px;
+    background-color: #5f5e5e;
+    border: none;
+    font-size: 18px;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background: #de080f;
+    transform: scale(1.05);
 }
 
 nav {
@@ -17,55 +39,122 @@ nav {
     border-radius: 12px;
     padding: 10px;
 }
-.nav-buttons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
+
+body{
+    font-family: Arial, sans-serif;
+    margin:0;
+    padding:40px;
+    text-align:center;
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
 }
-button {
-    height: 60px;
-    width: 100%;
-    max-width: 200px;
+
+main {
+    flex: 1;
+}
+
+.logo{
+    font-size:60px;
+    font-weight:bold;   
+    margin-bottom:40px;
+}
+
+button{
     background-color: #5f5e5e;
     border: none;
-    font-size: 18px;
-    color: white;
     border-radius: 8px;
     cursor: pointer;
 }
-button:hover {
-    background-color: black;
+
+button:hover{
+    background-color: rgba(0, 0, 0, 0.789);
+    color: white;
 }
 
-.logo {
-    font-size: 40px;
-    font-weight: bold;
-    margin: 0 auto 20px auto;
-    width: 100px;
+.exercise-dropdown{
+    margin-bottom:60px;
+}
+
+select{
+    background-color: #de080f;
+    padding: 12px;
+    font-size: 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+option{
+    background-color: #5f5e5e;
+    color: white;
+    cursor: pointer;
+}
+
+.level-buttons{
+    display:flex;
+    justify-content:center;
+    gap:60px;
+    margin-bottom:60px;
+}
+.level-buttons button{
+    padding: 12px 30px;
+    font-size: 15px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid #de080f;
+    color: white;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.level-buttons button:hover {
+    background: #de080f;
 }
 
 .dropdown-section {
     margin-bottom: 40px;
 }
 
-#results {
-    color: white;
-    max-width: 600px;
-    margin: 0 auto;
+.video-area{
+    margin-left: auto;
+    margin-right:auto;
+    height:300px;
+    width:500px;
+    color: white    ;
+    background: rgba(0,0,0,0.7);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 16px;
+    padding: 20px;
 }
 
-#results ul {
-    text-align: left;
-    padding: 0;
+.message-board {
+    margin-top: 40px;
 }
 
-.video-area {
-    margin: 2rem auto;
-    width: 100%;
-    max-width: 500px;
-    height: auto;
-    color: white;
+.message-board a{
+    color: #de080f;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.message-board a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    padding: 10px;
+    text-align: center;
+    color: #5f5e5e;
+    background-color: black;
+    margin-top: 20px;
 }
 
 @media (min-width: 600px) {
