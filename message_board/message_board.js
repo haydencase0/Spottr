@@ -57,25 +57,101 @@ form.addEventListener("submit", async (e) => {
 
     const name = nameInput.value.trim();
     const text = input.value.trim();
-    if (text === "") return;
+    if (name === "" || text === "") return;
 
-    const message = document.createElement("div");
-    message.classList.add("message");
+    const newMessage = {
+        name: name,
+        text: text,
+        timestamp: new Date().toISOString(),
+        replies: []
+    };
 
-    const messageText = document.createElement("div");
-    messageText.textContent = text;
+    // Get existing messages
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
 
-    const messageName = document.createElement("div");
-    messageName.classList.add("message-name");
-    messageName.textContent = `- ${name}`;
+    // Add new one
+    stored.push(newMessage);
 
-    message.appendChild(messageText);
-    message.appendChild(messageName);
+    // Save back to localStorage
+    localStorage.setItem("messages", JSON.stringify(stored));
 
-    messagesDiv.appendChild(message);
-
-    messagesDiv.scrollTop = messages.scrollHeight;
+    // Re-render
+    renderLocalMessages();
 
     nameInput.value = "";
     input.value = "";
 });
+
+function renderLocalMessages() {
+    messagesDiv.innerHTML = "";
+
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+    stored.forEach((msg, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("message");
+
+        wrapper.innerHTML = `
+            <p>${msg.text}</p>
+            <div class="message-name">— ${msg.name}</div>
+            <small>${new Date(msg.timestamp).toLocaleString()}</small>
+
+            <button class="reply-btn" data-index="${index}">Reply</button>
+            <button class="delete-btn" data-index="${index}">Delete</button>
+
+            <div class="replies"></div>
+        `;
+        const repliesDiv = wrapper.querySelector(".replies");
+
+        msg.replies.forEach(reply => {
+            const replyEl = document.createElement("div");
+            replyEl.classList.add("reply");
+
+            replyEl.innerHTML = `
+                <p>${reply.text}</p>
+                <div class="message-name">— ${reply.name}</div>
+            `;
+
+            repliesDiv.appendChild(replyEl);
+        });
+
+        messagesDiv.appendChild(wrapper);
+    });
+}
+
+messagesDiv.addEventListener("click", (e) => {
+    const stored = JSON.parse(localStorage.getItem("messages")) || [];
+
+    // DELETE
+    if (e.target.classList.contains("delete-btn")) {
+        const index = e.target.getAttribute("data-index");
+
+        stored.splice(index, 1);
+        localStorage.setItem("messages", JSON.stringify(stored));
+        renderLocalMessages();
+    }
+
+    // REPLY
+    if (e.target.classList.contains("reply-btn")) {
+        const index = e.target.getAttribute("data-index");
+
+        const replyText = prompt("Enter your reply:");
+        const replyName = prompt("Your name:");
+
+        if (!replyText || !replyName) return;
+
+        const reply = {
+            name: replyName,
+            text: replyText,
+            timestamp: new Date().toISOString()
+        };
+
+        stored[index].replies.push(reply);
+
+        localStorage.setItem("messages", JSON.stringify(stored));
+        renderLocalMessages();
+    }
+});
+
+// run on page load
+renderLocalMessages();
