@@ -6,22 +6,19 @@ body {
     background-position: center;
 }
 
-#messages {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    gap: 10px;
-    margin-bottom: 20px;
-
-    /* height: 300px; */
-    overflow-y: auto;
+nav, p, form, input, button {
+    font-family: "Titillium Web", sans-serif;
 }
 
-.message {
-    background: #f1f1f1;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 1rem;
+/************* nav *************/
+
+.logo {
+    height: 100px;
+    display: block;
+    margin: 20px auto 10px auto;
+    position: static;
+    float: none;
+    cursor: pointer;
 }
 
 nav {
@@ -56,11 +53,60 @@ nav div button:hover {
     color: white;
 }
 
-.logo {
-    height: 100px;
-    display: block;
-    margin: 20px auto 10px auto;
-    position: static;
-    float: none;
-    cursor: pointer;
+/************* Message board *************/
+
+.message-board-container {
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+/************* Post a message *************/
+
+#message-form {
+    background-color: white;
+    padding: 10px;
+    border-radius: 8px;
+
+    display: grid;
+    row-gap: 10px;
+}
+
+#name-input {
+    width: 200px;
+    border-radius: 8px;
+    border-style: solid;
+}
+
+#message-input {
+    /* height: 100px; */
+    border-radius: 8px;
+    border-style: solid;
+}
+
+#post-button {
+    width: 100px;
+    border-radius: 8px;
+}
+
+
+/************* Other Messages *************/
+
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+    /* height: 300px; */
+    overflow-y: auto;
+}
+
+.message {
+    background: #f1f1f1;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 10px;
 }
