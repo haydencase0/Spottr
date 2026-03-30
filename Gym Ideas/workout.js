@@ -724,6 +724,56 @@ equipment:"bodyweight",
 difficulty:"beginner",
 types:["strength","functional"],
 description:"Pull chest toward bar while body stays straight underneath."
+},
+
+{
+id:73,
+name:"Weighted Dip",
+category:"push",
+equipment:"bodyweight",
+difficulty:"advanced",
+types:["hypertrophy","strength"],
+description:"Perform dips while wearing a weight belt to increase resistance for advanced hypertrophy training."
+},
+
+{
+id:74,
+name:"Smith Machine Squat",
+category:"squat",
+equipment:"barbell",
+difficulty:"beginner",
+types:["powerlifting","strength"],
+description:"Use a Smith machine to perform squats with guided path for beginner powerlifting technique."
+},
+
+{
+id:75,
+name:"Tire Flip",
+category:"carry",
+equipment:"machine",
+difficulty:"advanced",
+types:["functional","strength"],
+description:"Explosively flip a heavy tire using full body power and coordination."
+},
+
+{
+id:76,
+name:"Sprint Intervals",
+category:"conditioning",
+equipment:"bodyweight",
+difficulty:"advanced",
+types:["cardio","functional"],
+description:"Sprint at maximum effort for short intervals followed by recovery periods."
+},
+
+{
+id:77,
+name:"PNF Stretching",
+category:"mobility",
+equipment:"bodyweight",
+difficulty:"intermediate",
+types:["mobility"],
+description:"Perform proprioceptive neuromuscular facilitation stretching to increase range of motion."
 }
 
 ]
@@ -829,6 +879,9 @@ WORKOUT GENERATOR
 function generateWorkout(type,level,time,equipment="full"){
 
 const count = timeMap[time] || 5
+
+// Map "expert" to "advanced"
+if(level === "expert") level = "advanced"
 
 let patterns = ["squat","push","pull","hinge","core"]
 
