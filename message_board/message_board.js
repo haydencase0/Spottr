@@ -137,7 +137,7 @@ messagesDiv.addEventListener("click", (e) => {
 
     // DELETE
     if (e.target.classList.contains("delete-btn")) {
-        const code = prompt("Enter delete code (1234):");
+        const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
 
         if (code !== "1234") {
             alert("Wrong code!");
@@ -176,7 +176,7 @@ messagesDiv.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-reply-btn")) {
         const messageIndex = e.target.getAttribute("data-message-index");
         const replyIndex = e.target.getAttribute("data-reply-index");
-        const code = prompt("Enter delete code (1234):");
+        const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
 
         if (code !== "1234") {
             alert("Wrong code!");
