@@ -137,6 +137,18 @@ messagesDiv.addEventListener("click", (e) => {
 
     // DELETE
     if (e.target.classList.contains("delete-btn")) {
+        const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
+
+        if (code === null || code.trim() === "") {
+            alert("Action cancelled");
+            return;
+        }
+
+        if (code !== "1234") {
+            alert("Wrong code!");
+            return;
+        }
+
         const index = e.target.getAttribute("data-index");
 
         stored.splice(index, 1);
@@ -149,6 +161,7 @@ messagesDiv.addEventListener("click", (e) => {
         const index = e.target.getAttribute("data-index");
 
         const replyText = prompt("Enter your reply:");
+        if (!replyText) return;
         const replyName = prompt("Your name:");
 
         if (!replyText || !replyName) return;
@@ -169,6 +182,17 @@ messagesDiv.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-reply-btn")) {
         const messageIndex = e.target.getAttribute("data-message-index");
         const replyIndex = e.target.getAttribute("data-reply-index");
+        const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
+
+        if (code === null || code.trim() === "") {
+            alert("Action cancelled");
+            return;
+        }
+
+        if (code !== "1234") {
+            alert("Wrong code!");
+            return;
+        }
 
         const stored = JSON.parse(localStorage.getItem("messages")) || [];
 
