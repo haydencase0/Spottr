@@ -13,15 +13,6 @@ body {
 
 }
 
-/* body {
-    background-image: url("images/background.png");
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    flex-direction: column;
-} */
-
 main {
     /* Used to make the footer stick to the bottom */
     flex: 1;
