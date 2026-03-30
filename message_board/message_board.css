@@ -10,11 +10,39 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+
 }
+
+/* body {
+    background-image: url("images/background.png");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+} */
 
 main {
     /* Used to make the footer stick to the bottom */
     flex: 1;
+}
+
+h1 {
+    color: #de080f;
+    font-family: "Gravitas One", sans-serif;
+    text-align: center;
+    margin: 20px 10px;
+    font-size: 2rem;
+    position: static;
+    text-shadow: #000000 2px 2px 4px ;
+}
+
+h2 {
+    background-color: transparent;
+    color: #12b7f1;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 1.6rem;
+    margin: 0 0 10px 0;
 }
 
 nav, p, form, input, button {
