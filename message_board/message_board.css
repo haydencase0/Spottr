@@ -4,6 +4,17 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+
+    /* Used to make the footer stick to the bottom */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+main {
+    /* Used to make the footer stick to the bottom */
+    flex: 1;
 }
 
 nav, p, form, input, button {
@@ -113,4 +124,14 @@ nav div button:hover {
     border-radius: 8px;
     font-size: 1rem;
     margin-top: 10px;
+}
+
+/************* Footer *************/
+
+footer {
+    padding: 10px;
+    text-align: center;
+    color: #5f5e5e;
+    background-color: black;
+    margin-top: 20px;
 }
