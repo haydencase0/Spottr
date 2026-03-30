@@ -69,6 +69,9 @@ nav div button:hover {
 
     display: grid;
     row-gap: 10px;
+
+    max-width: 500px;
+    margin: auto;
 }
 
 #name-input {
@@ -78,9 +81,10 @@ nav div button:hover {
 }
 
 #message-input {
-    /* height: 100px; */
+    height: 100px;
     border-radius: 8px;
     border-style: solid;
+    resize: vertical;
 }
 
 #post-button {
