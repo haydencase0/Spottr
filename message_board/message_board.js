@@ -139,6 +139,11 @@ messagesDiv.addEventListener("click", (e) => {
     if (e.target.classList.contains("delete-btn")) {
         const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
 
+        if (code === null || code.trim() === "") {
+            alert("Action cancelled");
+            return;
+        }
+
         if (code !== "1234") {
             alert("Wrong code!");
             return;
@@ -156,6 +161,7 @@ messagesDiv.addEventListener("click", (e) => {
         const index = e.target.getAttribute("data-index");
 
         const replyText = prompt("Enter your reply:");
+        if (!replyText) return;
         const replyName = prompt("Your name:");
 
         if (!replyText || !replyName) return;
@@ -177,6 +183,11 @@ messagesDiv.addEventListener("click", (e) => {
         const messageIndex = e.target.getAttribute("data-message-index");
         const replyIndex = e.target.getAttribute("data-reply-index");
         const code = prompt("If you are sure you wish to delete.\nEnter delete code (1234):");
+
+        if (code === null || code.trim() === "") {
+            alert("Action cancelled");
+            return;
+        }
 
         if (code !== "1234") {
             alert("Wrong code!");

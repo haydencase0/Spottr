@@ -14,6 +14,14 @@
     gap: 15px;
 }
 
+.controls{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin: 30px 0;
+}
+
 .button{
     height: 60px;
     width: 160px;
@@ -56,14 +64,11 @@ main {
     flex: 1;
 }
 
-.logo{
-    font-size:60px;
-    font-weight:bold;   
-    margin-bottom:40px;
-}
-
 button{
     background-color: #5f5e5e;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: white;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -80,8 +85,8 @@ button:hover{
 
 select{
     background-color: #de080f;
-    padding: 12px;
-    font-size: 16px;
+    padding: 10px 15px;
+    font-size: 14px;
     color: white;
     border: none;
     border-radius: 8px;
@@ -92,6 +97,15 @@ option{
     background-color: #5f5e5e;
     color: white;
     cursor: pointer;
+}
+
+#results {
+    max-width: 700px;
+    margin: 30px auto;
+    background: rgba(0,0,0,0.75);
+    padding: 25px;
+    border-radius: 12px;
+    text-align: left;
 }
 
 .level-buttons{
@@ -134,19 +148,8 @@ option{
     padding: 20px;
 }
 
-.message-board {
-    margin-top: 40px;
-}
-
-.message-board a{
-    color: #de080f;
-    font-size: 18px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.message-board a:hover {
-    text-decoration: underline;
+#results, .video-area, nav {
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 footer {
